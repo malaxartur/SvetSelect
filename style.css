@@ -76,6 +76,66 @@ body {
 
 
 
+
+
+ /* В очередной раз пробую делать карусель */
+
+ .carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+
+.dot.active { background: white; }
+
+
+
+
+
 /* Основные секции */
 
 .section {
@@ -140,7 +200,7 @@ body {
 
     max-width: 1200px;
 
-    margin: 15;
+    margin: 0 auto;
 
 }
 
@@ -164,7 +224,7 @@ body {
 
 .product-card:hover {
 
-    transform: translateY(-5px);
+    transform: translateY(-1px);
 
 }
 
@@ -184,9 +244,16 @@ body {
 
 }
 
-
-
 /* Контакты */
+.carousel {
+    width: 440px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+.carousel > img {
+    scroll-snap-align: center;
+}
 
 .contacts-wrapper {
 
@@ -245,7 +312,7 @@ body {
 
     cursor: pointer;
 
-    transition: background 0.3s;
+    transition :background 0.3s;
 
 }
 
